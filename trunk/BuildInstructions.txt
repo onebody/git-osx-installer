@@ -1,0 +1,9 @@
+curl -O http://kernel.org/pub/software/scm/git/git-1.5.4.4.tar.bz2
+tar jxvf git-1.5.4.4.tar.bz2
+cd git-1.5.4.4
+make prefix=/usr/local/git all
+sudo make prefix=/usr/local/git install
+cd ..
+
+curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.4.4.tar.bz2
+sudo tar xjv -C /usr/local/man -f git-manpages-1.5.4.4.tar.bz2
