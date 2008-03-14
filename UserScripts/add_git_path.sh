@@ -25,8 +25,12 @@ $ruby <<-EOF 2>&1 > /tmp/git_path_output.txt
   end
   
   def append_script_var(name, append_value)
-    [".profile", ".bash_profile"].each do |filename|
-      Dir.chdir(ENV["HOME"]) do
+  
+    Dir.chdir(ENV["HOME"]) do
+      target_files = [".profile", ".bash_profile"].select{|filename| File.exist?(filename) }
+      target_files = [".bash_profile"] if target_files == []
+      
+      target_files.each do |filename|
         profile = File.exist?(filename) ? File.read(filename) : ""
         unless /#{name}.+#{Regexp.escape(append_value)}/.match(profile)
           profile << "\nexport #{name}=#{append_value}:\$#{name}\n"
