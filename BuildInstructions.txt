@@ -6,4 +6,4 @@ sudo make prefix=/usr/local/git install
 cd ..
 
 curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.4.4.tar.bz2
-sudo tar xjv -C /usr/local/man -f git-manpages-1.5.4.4.tar.bz2
+sudo tar xjv -C /usr/local/git/man -f git-manpages-1.5.4.4.tar.bz2
