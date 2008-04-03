@@ -1,0 +1,40 @@
+#labels Featured
+== Build your own ==
+
+The source files I used to build the package are in [http://code.google.com/p/git-osx-installer/source/browse svn trunk] (I used !PackageMaker).  You may want to check that out and open it up and explore to get an idea of how to build a package, if you've never done it before :) (You may need to install my package first, as !PackageMaker may not show references to non-existing files)
+
+Some guidelines steps:
+ * Copy the following files to {{{/usr/local/git/lib}}} (you'll have to create the path, of course):
+{{{
+libcrypto.0.9.8.dylib
+libcrypto.dylib
+libexpat.1.5.2.dylib
+libexpat.dylib
+libssl.0.9.8.dylib
+libssl.dylib
+libz.1.2.3.dylib
+libz.1.dylib
+}}}
+    
+ * Use this [http://git-osx-installer.googlecode.com/svn/trunk/BuildInstructions.txt build recipe] to build git
+ * Open up !PackageMaker
+ * Add the folder /usr/local/git to package contents (use the Add Contents context menu when alt-clicking on the contents sidebar).  Then, select the folder that appears.
+http://git-osx-installer.googlecode.com/files/Git-option-configuration.jpg
+
+ * De-select the man pages folder:
+http://git-osx-installer.googlecode.com/files/Git-option-contents.jpg
+
+ * Make sure the files in the "hooks" directory are set to install as non-executable: 
+http://git-osx-installer.googlecode.com/files/git-option-contents-hooks-non-executable.jpg
+ 
+ * Add the "Man Pages" package contents from /usr/local/git/man, and configure it accordingly:
+http://git-osx-installer.googlecode.com/files/git-man-configuration.jpg
+
+ * Add the [http://git-osx-installer.googlecode.com/svn/trunk/UserScripts UserScripts] folder (you'll need to [http://code.google.com/p/git-osx-installer/source/browse check it out from subversion]) as a package contents
+    * Set it to NOT run as administer.
+http://git-osx-installer.googlecode.com/files/userscript-option-configuration.jpg
+    * Set it to just install the script (not really needed, but helpful for troubleshooting)
+http://git-osx-installer.googlecode.com/files/userscript-contents.jpg
+    * Set the POST install script to include add_git_path.sh
+http://git-osx-installer.googlecode.com/files/userscript-options-scripts.jpg
+  
