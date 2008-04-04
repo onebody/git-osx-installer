@@ -1,16 +1,22 @@
-curl -O http://kernel.org/pub/software/scm/git/git-1.5.4.4.tar.bz2
-tar jxvf git-1.5.4.4.tar.bz2
-cd git-1.5.4.4
+sudo mkdir -p /usr/local/git/lib
+
+Find and copy the following files to /usr/local/git/lib:
+libz.1.dyliblibz.1.2.3.dyliblibssl.0.9.8.dyliblibssl.dyliblibexpat.dyliblibexpat.1.5.2.dyliblibcrypto.dyliblibcrypto.0.9.8.dylib
+
+
+curl -O http://kernel.org/pub/software/scm/git/git-1.5.4.5.tar.bz2
+tar jxvf git-1.5.4.5.tar.bz2
+cd git-1.5.4.5
 make prefix=/usr/local/git all
 make prefix=/usr/local/git strip
 sudo make prefix=/usr/local/git install
 cd ..
 
 # change hardlinks for symlinks
-ruby #{InstallerFilesRoot}/UserScripts/symlink_git_hardlinks.rb
+sudo ruby #{InstallerFilesRoot}/UserScripts/symlink_git_hardlinks.rb
 
-curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.4.4.tar.bz2
+curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.4.5.tar.bz2
 mkdir -p /usr/local/git/man
-sudo tar xjv -C /usr/local/git/man -f git-manpages-1.5.4.4.tar.bz2
+sudo tar xjv -C /usr/local/git/man -f git-manpages-1.5.4.5.tar.bz2
 
 
