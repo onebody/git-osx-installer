@@ -1,20 +1,21 @@
-sudo mkdir -p /usr/local/git/lib
+Check the UserScripts/cplibs.sh file and make sure the FROM_DIR is correct for your system. /opt/local/lib should be fine if you're using MacPorts, which provides these libraries.
 
-# Find and copy the following files to /usr/local/git/lib:
-# libz.1.dylib
-# libz.1.2.3.dylib
-# libssl.0.9.8.dylib
-# libssl.dylib
-# libexpat.dylib
-# libexpat.1.5.2.dylib
-# libcrypto.dylib
-# libcrypto.0.9.8.dylib
+Then,
 
-# MAKE SURE that files without the full exntensions are symlinks to the files with extensions: ie libcrypto.dylib -> libcrypto.0.9.8.dylib
+sudo UserScripts/cplibs.sh
 
 curl -O http://kernel.org/pub/software/scm/git/git-1.5.4.5.tar.bz2
 tar jxvf git-1.5.4.5.tar.bz2
 cd git-1.5.4.5
+
+If you're on PPC, you may need to edit your Makefile and add: 
+MOZILLA_SHA1=1
+
+Tell make to use /usr/local/git/lib rather than MacPorts:
+
+NO_DARWIN_PORTS=1
+LDFLAGS = "-L/usr/local/git/lib"
+
 make prefix=/usr/local/git all
 make prefix=/usr/local/git strip
 sudo make prefix=/usr/local/git install
