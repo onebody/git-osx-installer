@@ -1,8 +1,16 @@
 sudo mkdir -p /usr/local/git/lib
 
-Find and copy the following files to /usr/local/git/lib:
-libz.1.dyliblibz.1.2.3.dyliblibssl.0.9.8.dyliblibssl.dyliblibexpat.dyliblibexpat.1.5.2.dyliblibcrypto.dyliblibcrypto.0.9.8.dylib
+# Find and copy the following files to /usr/local/git/lib:
+# libz.1.dylib
+# libz.1.2.3.dylib
+# libssl.0.9.8.dylib
+# libssl.dylib
+# libexpat.dylib
+# libexpat.1.5.2.dylib
+# libcrypto.dylib
+# libcrypto.0.9.8.dylib
 
+# MAKE SURE that files without the full exntensions are symlinks to the files with extensions: ie libcrypto.dylib -> libcrypto.0.9.8.dylib
 
 curl -O http://kernel.org/pub/software/scm/git/git-1.5.4.5.tar.bz2
 tar jxvf git-1.5.4.5.tar.bz2
