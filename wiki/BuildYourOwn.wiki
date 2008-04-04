@@ -20,12 +20,14 @@ Installs Git and dependencies to /usr/local/git/
 http://git-osx-installer.googlecode.com/files/Git-option-configuration.jpg
 
 
- * De-select the man pages folder:
+   * De-select the man pages folder:
 http://git-osx-installer.googlecode.com/files/Git-option-contents.jpg
 
- * Make sure the files in the "hooks" directory are set to install as non-executable: 
+   * Make sure the files in the "hooks" directory are set to install as non-executable: 
 http://git-osx-installer.googlecode.com/files/git-option-contents-hooks-non-executable.jpg
  
+    * Under components, disable "Allow Relocation"
+
  * Add the "Man Pages" package contents from /usr/local/git/man, and configure it accordingly:
 
 Choice Name: Man Pages
@@ -60,4 +62,4 @@ Description:
 Git Gui is a fully functional graphical interface to git
 }}}
     * Run as administrator
-    * Under components, disable "Allow Relocation"2
+    * Under components, disable "Allow Relocation"
