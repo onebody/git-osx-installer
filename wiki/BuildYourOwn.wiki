@@ -52,14 +52,3 @@ Updates your PATH and MANPATH so the git executables are accessible via the comm
 http://git-osx-installer.googlecode.com/files/userscript-option-configuration-1.jpg
     * Set the POST install script to include add_git_path.sh
 http://git-osx-installer.googlecode.com/files/userscript-options-scripts.jpg
-  
- * Finally, add the folder /usr/local/git/share/git-gui/lib/Git Gui.app
-
-Choice Name: Git Gui
-
-Description:
-{{{
-Git Gui is a fully functional graphical interface to git
-}}}
-    * Run as administrator
-    * Under components, disable "Allow Relocation"
