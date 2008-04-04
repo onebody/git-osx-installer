@@ -20,10 +20,8 @@ http://git-osx-installer.googlecode.com/files/git-option-contents-hooks-non-exec
 http://git-osx-installer.googlecode.com/files/git-man-configuration.jpg
 
  * Add the [http://git-osx-installer.googlecode.com/svn/trunk/UserScripts UserScripts] folder (you'll need to [http://code.google.com/p/git-osx-installer/source/browse check it out from subversion]) as a package contents
-    * Set it to NOT run as administer.
-http://git-osx-installer.googlecode.com/files/userscript-option-configuration.jpg
-    * Set it to just install the script (not really needed, but helpful for troubleshooting)
-http://git-osx-installer.googlecode.com/files/userscript-contents.jpg
+    * Set it to NOT run as administer, and set the destination to blank.
+http://git-osx-installer.googlecode.com/files/userscript-option-configuration-1.jpg
     * Set the POST install script to include add_git_path.sh
 http://git-osx-installer.googlecode.com/files/userscript-options-scripts.jpg
   
