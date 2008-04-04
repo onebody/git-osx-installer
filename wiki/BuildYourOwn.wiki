@@ -7,8 +7,17 @@ Some guidelines steps:
 
  * Use this [http://git-osx-installer.googlecode.com/svn/trunk/BuildInstructions.txt build recipe] to build git
  * Open up !PackageMaker
- * Add the folder /usr/local/git to package contents (use the Add Contents context menu when ctrl-clicking on the contents sidebar).  Then, select the folder that appears.
+ * Add the folder /usr/local/git to package contents (use the Add Contents context menu when ctrl-clicking on the contents sidebar).  
+ 
+Choice Name: Git 1.5.4.5 (or the version of git). 
+Description:
+{{{
+Installs Git and dependencies to /usr/local/git/
+}}}
+
+* Then, select the folder that appears.
 http://git-osx-installer.googlecode.com/files/Git-option-configuration.jpg
+
 
  * De-select the man pages folder:
 http://git-osx-installer.googlecode.com/files/Git-option-contents.jpg
@@ -17,11 +26,34 @@ http://git-osx-installer.googlecode.com/files/Git-option-contents.jpg
 http://git-osx-installer.googlecode.com/files/git-option-contents-hooks-non-executable.jpg
  
  * Add the "Man Pages" package contents from /usr/local/git/man, and configure it accordingly:
+
+Choice Name: Man Pages
+Text:
+{{{
+  Documentation for Git.  Recommended.
+}}}
+
 http://git-osx-installer.googlecode.com/files/git-man-configuration.jpg
 
  * Add the [http://git-osx-installer.googlecode.com/svn/trunk/UserScripts UserScripts] folder (you'll need to [http://code.google.com/p/git-osx-installer/source/browse check it out from subversion]) as a package contents
+
+Choice Name: Update MANPATH and PATH
+Description:
+{{{
+Updates your PATH and MANPATH so the git executables are accessible via the command line.  If .profile or .bash_profile exist, it will append to them.  If neither exist, it will create .bash_profile.  Additionally, sets the PATH/MANPATH variables in ~/.MacOSX/environment.plist (so apps like TextMate will see it).  This requires a logout to take affect.
+}}}
+
     * Set it to NOT run as administer, and set the destination to blank.
 http://git-osx-installer.googlecode.com/files/userscript-option-configuration-1.jpg
     * Set the POST install script to include add_git_path.sh
 http://git-osx-installer.googlecode.com/files/userscript-options-scripts.jpg
   
+ * Finally, add the folder /usr/local/git/share/git-gui/lib/Git Gui.app
+
+Choice Name: Git Gui
+Description:
+{{{
+Git Gui is a fully functional graphical interface to git
+}}}
+    * Run as administrator
+    * Under components, disable "Allow Relocation"2
