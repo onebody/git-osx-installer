@@ -1,56 +1,48 @@
 #!/bin/sh
-ruby=`which ruby /opt/local/bin/ruby /usr/local/bin/ruby | uniq`
-echo $ruby
-$ruby <<-EOF 2>&1 > /tmp/git_path_output.txt
-  require 'fileutils'
-  GIT_DIR = "/usr/local/git/bin"
-  GIT_MAN_DIR = "/usr/local/git/man"
+append_path () {
+  input="$1"
+  value="$2"
+  if ! echo $input | /usr/bin/egrep -q "(^|:)$value($|:)" ; then
+     if [ "$3" = "after" ] ; then
+        echo $input:$value
+     else
+        echo $value:$input
+     fi
+  else
+    echo $input
+  fi
+}
 
-  ENV_PLIST_DIR = "#{ENV['HOME']}/.MacOSX/"
-  FileUtils.mkdir_p(ENV_PLIST_DIR)
+append_plist_var() {
+  name="$1"
+  append_value="$2"
+  default_value="$3"
+  current_value="`defaults read ~/.MacOSX/environment ${name}`"
+  [ ! "$current_value" ] && current_value="$default_value"
+  defaults write ~/.MacOSX/environment "$name" "`append_path "$current_value" "$append_value" after`"
+}
+
+append_variable_setter_to_file_unless_exists() {
+  target_file=$1
+  variable=$2
+  value=$3
   
-  def append_plist_var(name, append_value, default_value = nil)
-    Dir.chdir(ENV_PLIST_DIR) do 
-      puts "1"
-      values = File.exist?("environment.plist") ? %x{defaults read ~/.MacOSX/environment #{name}}.strip.split(":") : []
-      puts "2 - #{ENV.inspect} - #{name}"
-      values = (ENV[name] || default_value || "").split(":") if values.empty?
-      puts "3"
-      values << append_value
-      puts "4"
-      output = values.uniq * ":"
-      puts "5"
-      puts %x{defaults write ~/.MacOSX/environment #{name} "#{output}"}
-    end
-  end
-  
-  def append_script_var(name, append_value)
-  
-    Dir.chdir(ENV["HOME"]) do
-      target_files = [".profile", ".bash_profile"].select{|filename| File.exist?(filename) }
-      target_files = [".bash_profile"] if target_files == []
-      
-      target_files.each do |filename|
-        profile = File.exist?(filename) ? File.read(filename) : ""
-        unless /#{name}.+#{Regexp.escape(append_value)}/.match(profile)
-          profile << "\nexport #{name}=#{append_value}:\$#{name}\n"
-          File.open(filename, "wb") { |f| f << profile }
-        end
-      end
-    end
-  end
-  
-  puts "modifying the MacOSX environment.plist PATH variable"
-  append_plist_var("PATH", GIT_DIR, "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin")
-  
-  puts "modifying the MacOSX environment.plist MANPATH variable"
-  append_plist_var("MANPATH", GIT_MAN_DIR, "/usr/local/man:/usr/share/man:/usr/local/share/man:/usr/X11/man")
-  
-  puts "modifying PATH variable"
-  append_script_var("PATH", GIT_DIR)
-  
-  puts "modifying MANPATH variable"
-  append_script_var("MANPATH", GIT_MAN_DIR)
-  
-  puts "All done!"
-EOF
+  if [ ! "`cat $target_file | egrep "^export ${variable}" | grep "${value}"`" ]; then
+    echo "
+export ${variable}=${value}:\$${variable}" >> $target_file
+  fi
+}
+
+append_plist_var PATH "/usr/local/git/bin" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin"
+append_plist_var MANPATH "/usr/local/git/man" "/usr/local/man:/usr/share/man:/usr/local/share/man:/usr/X11/man"
+
+cd ~
+
+[ ! -f .bash_profile ] && [ ! -f .profile ] && touch .bash_profile
+
+for file in .bash_profile .profile; do
+  if [ -f $file ]; then
+    append_variable_setter_to_file_unless_exists $file PATH /usr/local/git/bin
+    append_variable_setter_to_file_unless_exists $file MANPATH /usr/local/git/man;
+  fi
+done
