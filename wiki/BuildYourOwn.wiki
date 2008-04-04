@@ -7,7 +7,7 @@ Some guidelines steps:
 
  * Use this [http://git-osx-installer.googlecode.com/svn/trunk/BuildInstructions.txt build recipe] to build git
  * Open up !PackageMaker
- * Add the folder /usr/local/git to package contents (use the Add Contents context menu when alt-clicking on the contents sidebar).  Then, select the folder that appears.
+ * Add the folder /usr/local/git to package contents (use the Add Contents context menu when ctrl-clicking on the contents sidebar).  Then, select the folder that appears.
 http://git-osx-installer.googlecode.com/files/Git-option-configuration.jpg
 
  * De-select the man pages folder:
