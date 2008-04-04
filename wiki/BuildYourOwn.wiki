@@ -9,9 +9,9 @@ Some guidelines steps:
  * Open up !PackageMaker
  * Add the folder /usr/local/git to package contents (use the Add Contents context menu when ctrl-clicking on the contents sidebar).  
  
+{{{
 Choice Name: Git 1.5.4.5 (or the version of git). 
 Description:
-{{{
 Installs Git and dependencies to /usr/local/git/
 }}}
 
@@ -27,9 +27,9 @@ http://git-osx-installer.googlecode.com/files/git-option-contents-hooks-non-exec
  
  * Add the "Man Pages" package contents from /usr/local/git/man, and configure it accordingly:
 
+{{{
 Choice Name: Man Pages
 Text:
-{{{
   Documentation for Git.  Recommended.
 }}}
 
@@ -37,9 +37,9 @@ http://git-osx-installer.googlecode.com/files/git-man-configuration.jpg
 
  * Add the [http://git-osx-installer.googlecode.com/svn/trunk/UserScripts UserScripts] folder (you'll need to [http://code.google.com/p/git-osx-installer/source/browse check it out from subversion]) as a package contents
 
+{{{
 Choice Name: Update MANPATH and PATH
 Description:
-{{{
 Updates your PATH and MANPATH so the git executables are accessible via the command line.  If .profile or .bash_profile exist, it will append to them.  If neither exist, it will create .bash_profile.  Additionally, sets the PATH/MANPATH variables in ~/.MacOSX/environment.plist (so apps like TextMate will see it).  This requires a logout to take affect.
 }}}
 
@@ -50,9 +50,9 @@ http://git-osx-installer.googlecode.com/files/userscript-options-scripts.jpg
   
  * Finally, add the folder /usr/local/git/share/git-gui/lib/Git Gui.app
 
+{{{
 Choice Name: Git Gui
 Description:
-{{{
 Git Gui is a fully functional graphical interface to git
 }}}
     * Run as administrator
