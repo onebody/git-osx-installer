@@ -1,6 +1,7 @@
-Check the UserScripts/cplibs.sh file and make sure the FROM_DIR is correct for your system. /opt/local/lib should be fine if you're using MacPorts, which provides these libraries.
+# Check the UserScripts/cplibs.sh file and make sure the FROM_DIR is correct for your system. 
+# /opt/local/lib should be fine if you're using MacPorts, which provides these libraries.
 
-Then,
+# Then,
 
 sudo UserScripts/cplibs.sh
 
@@ -8,17 +9,15 @@ curl -O http://kernel.org/pub/software/scm/git/git-1.5.4.5.tar.bz2
 tar jxvf git-1.5.4.5.tar.bz2
 cd git-1.5.4.5
 
-If you're on PPC, you may need to edit your Makefile and add: 
+# If you're on PPC, you may need to edit your Makefile and add: 
 MOZILLA_SHA1=1
 
-Tell make to use /usr/local/git/lib rather than MacPorts:
-
+ # Tell make to use /usr/local/git/lib rather than MacPorts:
 NO_DARWIN_PORTS=1
-LDFLAGS = "-L/usr/local/git/lib"
 
-make prefix=/usr/local/git all
-make prefix=/usr/local/git strip
-sudo make prefix=/usr/local/git install
+make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git all
+make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git strip
+sudo make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git install
 cd ..
 
 # change hardlinks for symlinks
