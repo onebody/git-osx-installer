@@ -1,0 +1,5 @@
+Download this [http://git-osx-installer.googlecode.com/svn/trunk/UserScripts/add_git_path.sh script].
+
+Make it executable {{{chmod +x add_git_path.sh}}}
+
+Run it.
