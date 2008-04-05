@@ -7,3 +7,7 @@ http://git-osx-installer.googlecode.com/files/OpenInGitGuiScreenshot.jpg
 To install, [http://git-osx-installer.googlecode.com/files/OpenInGitGui.zip download], and extract to /Applications/Scripts (you'll need to create the Scripts directory, likely).  Then, find the icon, and drag it up to your toolbar.  Keep it there for a few seconds until it "sticks".
 
 To use, open finder to a folder with a git repository, and click the "Git" icon.
+
+= Credits =
+
+This is really a modified version of [http://henrik.nyh.se/2007/10/open-in-textmate-from-leopard-finder open in textmate],
