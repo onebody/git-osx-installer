@@ -5,9 +5,9 @@
 
 sudo UserScripts/cplibs.sh
 
-curl -O http://kernel.org/pub/software/scm/git/git-1.5.4.5.tar.bz2
-tar jxvf git-1.5.4.5.tar.bz2
-cd git-1.5.4.5
+curl -O http://kernel.org/pub/software/scm/git/git-1.5.5.1.tar.bz2
+tar jxvf git-1.5.5.1.tar.bz2
+cd git-1.5.5.1
 
 # If you're on PPC, you may need to edit your Makefile and add: 
 MOZILLA_SHA1=1
@@ -25,8 +25,8 @@ cd ..
 # change hardlinks for symlinks
 sudo ruby #{InstallerFilesRoot}/UserScripts/symlink_git_hardlinks.rb
 
-curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.4.5.tar.bz2
+curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.5.1.tar.bz2
 mkdir -p /usr/local/git/man
-sudo tar xjv -C /usr/local/git/man -f git-manpages-1.5.4.5.tar.bz2
+sudo tar xjv -C /usr/local/git/man -f git-manpages-1.5.5.1.tar.bz2
 
 
