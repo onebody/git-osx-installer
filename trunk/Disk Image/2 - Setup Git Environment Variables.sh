@@ -24,10 +24,10 @@ append_plist_var() {
   name="$1"
   append_value="$2"
   default_value="$3"
-  current_value="`defaults read ~/.MacOSX/environment ${name}`"
+  current_value="`defaults read $HOME/.MacOSX/environment ${name}`"
   [ ! "$current_value" ] && current_value="$default_value"
   new_value="`append_path "$current_value" "$append_value" after`"
-  defaults write ~/.MacOSX/environment "$name" "$new_value"
+  defaults write $HOME/.MacOSX/environment "$name" "$new_value"
   if [ "$current_value" == "$new_value" ]; then
     log "No change to $name in ~/.MacOSX/environment.plist"
   else
@@ -52,7 +52,7 @@ export ${variable}=${value}:\$${variable}" >> $target_file
 append_plist_var PATH "/usr/local/git/bin" "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin"
 append_plist_var MANPATH "/usr/local/git/man" "/usr/local/man:/usr/share/man:/usr/local/share/man:/usr/X11/man"
 
-cd ~
+pushd "$HOME"
 
 [ ! -f .bash_profile ] && [ ! -f .profile ] && touch .bash_profile
 
@@ -63,3 +63,8 @@ for file in .bash_profile .profile; do
   fi
 done
 osascript -e "tell application \"Finder\"" -e "activate" -e "display dialog \"$log_output\"" -e "end tell"
+
+# Add git to the path so you can start using it immediately
+export PATH=$PATH:/usr/local/git/bin
+
+popd
