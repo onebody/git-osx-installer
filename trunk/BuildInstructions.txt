@@ -20,13 +20,19 @@ mv Makefile_tmp Makefile
 make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git all
 make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git strip
 sudo make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git install
-cd ..
+
+# contrib
+mkdir -p /usr/local/git/contrib/completion
+cp contrib/completion/git-completion.bash /usr/local/git/contrib/completion/
 
 # change hardlinks for symlinks
 sudo ruby #{InstallerFilesRoot}/UserScripts/symlink_git_hardlinks.rb
+
+cd ..
 
 curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.5.1.tar.bz2
 mkdir -p /usr/local/git/man
 sudo tar xjv -C /usr/local/git/man -f git-manpages-1.5.5.1.tar.bz2
 
-
+# add .DS_Store to default ignore for new repositories
+sudo sh -c "echo .DS_Store >> /usr/local/git/share/git-core/templates/info/exclude"
