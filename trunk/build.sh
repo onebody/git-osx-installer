@@ -1,15 +1,14 @@
 #!/bin/sh
-GIT_VERSION="1.5.5.3"
+GIT_VERSION="1.5.6.1"
 
 sudo mv /usr/local/git{,_`date +%s`}
 sudo UserScripts/cplibs.sh
 
-rm -rf git_build
 mkdir git_build
 
 pushd git_build
-    curl -O http://kernel.org/pub/software/scm/git/git-$GIT_VERSION.tar.bz2
-    tar jxvf git-$GIT_VERSION.tar.bz2
+    [ ! -f git-$GIT_VERSION.tar.bz2 ] && curl -O http://kernel.org/pub/software/scm/git/git-$GIT_VERSION.tar.bz2
+    [ ! -d git-$GIT_VERSION ] && tar jxvf git-$GIT_VERSION.tar.bz2
     pushd git-$GIT_VERSION
 
         # If you're on PPC, you may need to edit your Makefile and add: 
@@ -25,13 +24,13 @@ pushd git_build
         sudo make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git install
 
         # contrib
-        mkdir -p /usr/local/git/contrib/completion
-        cp contrib/completion/git-completion.bash /usr/local/git/contrib/completion/
+        sudo mkdir -p /usr/local/git/contrib/completion
+        sudo cp contrib/completion/git-completion.bash /usr/local/git/contrib/completion/
     popd
     
-    curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-$GIT_VERSION.tar.bz2
+    [ ! -f git-manpages-$GIT_VERSION.tar.bz2 ] && curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-$GIT_VERSION.tar.bz2
     sudo mkdir -p /usr/local/git/man
-    sudo tar xjv -C /usr/local/git/man -f git-manpages-$GIT_VERSION.tar.bz2
+    sudo tar xjvo -C /usr/local/git/man -f git-manpages-$GIT_VERSION.tar.bz2
 popd
 
 # change hardlinks for symlinks
