@@ -38,14 +38,14 @@
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>Git OSX Installer</string>
+							<string>x.x.x.x</string>
 						</array>
 					</dict>
 					<key>defaultMessage</key>
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>Name for disk image?</string>
+							<string>What version of git is this?</string>
 						</array>
 					</dict>
 					<key>requireInput</key>
@@ -71,9 +71,9 @@
 					<key>buttonNegative</key>
 					<string>Cancel</string>
 					<key>defaultAnswer</key>
-					<string>Git OSX Installer</string>
+					<string>x.x.x.x</string>
 					<key>defaultMessage</key>
-					<string>Name for disk image?</string>
+					<string>What version of git is this?</string>
 					<key>requireInput</key>
 					<true/>
 				</dict>
@@ -97,7 +97,7 @@
 				<key>Class Name</key>
 				<string>AMAppleScriptAction</string>
 				<key>InputUUID</key>
-				<string>FD1AFDB0-B9C6-4939-BE2F-473A0036E102</string>
+				<string>1AD7664E-7D8F-41E1-BE5D-BEDEF575352F</string>
 				<key>Keywords</key>
 				<array>
 					<string>Text</string>
@@ -105,9 +105,9 @@
 					<string>Prompt</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>EA377EDB-D096-4A43-89FD-B0D8FAA88E18</string>
+				<string>0E0C1463-5B40-40DB-A81D-401F527E85CA</string>
 				<key>UUID</key>
-				<string>80FEE130-5F08-49FB-AD6F-5E6934C0D4ED</string>
+				<string>038A22CF-2638-4232-9B59-CBF664ED33C4</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -214,7 +214,9 @@
 						<key>isPathPopUp</key>
 						<false/>
 						<key>selectedVariableUUID</key>
-						<string>5E11D570-DCEF-4DBE-BCEF-D6C2D89A8585</string>
+						<string>DEA2B0AD-158A-445A-8645-40EA81364BF9</string>
+						<key>variableUUIDsInMenu</key>
+						<array/>
 					</dict>
 				</dict>
 				<key>AMProvides</key>
@@ -235,7 +237,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>variableUUID</key>
-					<string>5E11D570-DCEF-4DBE-BCEF-D6C2D89A8585</string>
+					<string>DEA2B0AD-158A-445A-8645-40EA81364BF9</string>
 				</dict>
 				<key>Application</key>
 				<array>
@@ -256,7 +258,7 @@
 				<key>Class Name</key>
 				<string>Set_Value_of_Variable</string>
 				<key>InputUUID</key>
-				<string>72DD4F3E-03FD-4779-BADB-4089755E4A0F</string>
+				<string>179711BE-0645-497E-9801-70D83740EC3E</string>
 				<key>Keywords</key>
 				<array>
 					<string>variable</string>
@@ -266,9 +268,9 @@
 					<string>storage</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>6B37AF02-307A-4F78-B870-ED5009D592C2</string>
+				<string>E6C8B617-5A0A-43B8-96B0-539BDC9BA1DC</string>
 				<key>UUID</key>
-				<string>F1FC72B7-CF53-412D-BDAA-6BF1B635BAB2</string>
+				<string>CB942E8C-2805-4065-9A4F-7DAC11D78002</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -425,7 +427,9 @@
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>git-osx-installer</string>
+							<string>git-</string>
+							<string>$(DEA2B0AD-158A-445A-8645-40EA81364BF9)</string>
+							<string>-osx-leopard-intel</string>
 						</array>
 					</dict>
 					<key>folderPath</key>
@@ -441,7 +445,9 @@
 					<dict>
 						<key>tokenizedValue</key>
 						<array>
-							<string>$(5E11D570-DCEF-4DBE-BCEF-D6C2D89A8585)</string>
+							<string>Git-</string>
+							<string>$(DEA2B0AD-158A-445A-8645-40EA81364BF9)</string>
+							<string>- Installer for Intel OS X Leopard</string>
 						</array>
 					</dict>
 					<key>whenDone</key>
@@ -465,15 +471,15 @@
 					<key>encryptImage</key>
 					<false/>
 					<key>fileName</key>
-					<string>git-osx-installer</string>
+					<string>git-$(DEA2B0AD-158A-445A-8645-40EA81364BF9)-osx-leopard-intel</string>
 					<key>folderPath</key>
 					<string>~/Desktop/Installer</string>
 					<key>imageSize</key>
 					<integer>-1</integer>
 					<key>volumeName</key>
-					<string>$(5E11D570-DCEF-4DBE-BCEF-D6C2D89A8585)</string>
+					<string>Git-$(DEA2B0AD-158A-445A-8645-40EA81364BF9)- Installer for Intel OS X Leopard</string>
 					<key>whenDone</key>
-					<integer>1</integer>
+					<integer>0</integer>
 				</dict>
 				<key>Application</key>
 				<array>
@@ -603,26 +609,26 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>7F75B62F-8D8E-4F6B-B2B6-5320022C4901</key>
-		<dict>
-			<key>from</key>
-			<string>F1FC72B7-CF53-412D-BDAA-6BF1B635BAB2 - F1FC72B7-CF53-412D-BDAA-6BF1B635BAB2</string>
-			<key>to</key>
-			<string>8334B814-2EB1-4250-A210-7E12B8EF0217 - 8334B814-2EB1-4250-A210-7E12B8EF0217</string>
-		</dict>
-		<key>B581DFBF-247B-470E-B614-B1FAB28AFCF9</key>
-		<dict>
-			<key>from</key>
-			<string>80FEE130-5F08-49FB-AD6F-5E6934C0D4ED - 80FEE130-5F08-49FB-AD6F-5E6934C0D4ED</string>
-			<key>to</key>
-			<string>F1FC72B7-CF53-412D-BDAA-6BF1B635BAB2 - F1FC72B7-CF53-412D-BDAA-6BF1B635BAB2</string>
-		</dict>
-		<key>B8980322-F5F7-4424-96CD-4D79645307DA</key>
+		<key>2F8B06E0-DA90-44EB-BB03-7ABC99BB70B6</key>
 		<dict>
 			<key>from</key>
 			<string>8334B814-2EB1-4250-A210-7E12B8EF0217 - 8334B814-2EB1-4250-A210-7E12B8EF0217</string>
 			<key>to</key>
 			<string>12BE0146-A857-4EB3-828E-299633E22518 - 12BE0146-A857-4EB3-828E-299633E22518</string>
+		</dict>
+		<key>4A41D7C5-86FC-42F2-A15E-BCECFC717C92</key>
+		<dict>
+			<key>from</key>
+			<string>038A22CF-2638-4232-9B59-CBF664ED33C4 - 038A22CF-2638-4232-9B59-CBF664ED33C4</string>
+			<key>to</key>
+			<string>CB942E8C-2805-4065-9A4F-7DAC11D78002 - CB942E8C-2805-4065-9A4F-7DAC11D78002</string>
+		</dict>
+		<key>C322ECC2-7C83-4965-96A1-FE4E34AB89F5</key>
+		<dict>
+			<key>from</key>
+			<string>CB942E8C-2805-4065-9A4F-7DAC11D78002 - CB942E8C-2805-4065-9A4F-7DAC11D78002</string>
+			<key>to</key>
+			<string>8334B814-2EB1-4250-A210-7E12B8EF0217 - 8334B814-2EB1-4250-A210-7E12B8EF0217</string>
 		</dict>
 	</dict>
 	<key>state</key>
@@ -634,9 +640,9 @@
 		<key>MainSplitViewPosition_v2</key>
 		<real>338</real>
 		<key>windowFrame</key>
-		<string>{{624, 25}, {973, 936}}</string>
+		<string>{{625, 176}, {973, 936}}</string>
 		<key>windowFrameTopLeft</key>
-		<string>{{624, 1}, {973, 936}}</string>
+		<string>{{625, 0}, {973, 936}}</string>
 		<key>workflowViewScrollPosition</key>
 		<string>{{0, 0}, {635, 700}}</string>
 	</dict>
@@ -644,11 +650,13 @@
 	<array>
 		<dict>
 			<key>UUID</key>
-			<string>5E11D570-DCEF-4DBE-BCEF-D6C2D89A8585</string>
+			<string>DEA2B0AD-158A-445A-8645-40EA81364BF9</string>
 			<key>identifier</key>
-			<string>com.apple.Automator.Variable.Storage</string>
+			<string>com.apple.Automator.Variable.Text</string>
 			<key>name</key>
-			<string>Install Package Name</string>
+			<string>Git Version</string>
+			<key>value</key>
+			<string>1.5.5.4</string>
 		</dict>
 	</array>
 </dict>
