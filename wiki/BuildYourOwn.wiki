@@ -1,7 +1,7 @@
 #labels Featured
 == Build your own ==
 
-The source files I used to build the package are in [http://code.google.com/p/git-osx-installer/source/browse svn trunk] (I used !PackageMaker).  You may want to check that out and open it up and explore to get an idea of how to build a package, if you've never done it before :) (You may need to install my package first, as !PackageMaker may not show references to non-existing files)
+The source files I used to build the package are in [http://code.google.com/p/git-osx-installer/source/browse svn trunk] (I used !PackageMaker).  You may want to "git-svn clone" that and open it up and explore to get an idea of how to build a package, if you've never done it before :) (You may need to install my package first, as !PackageMaker may not show references to non-existing files)
 
 Some guidelines steps:
 
