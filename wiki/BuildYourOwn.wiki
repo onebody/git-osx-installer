@@ -1,0 +1,1 @@
+The source files are in the svn repository (I know... a git projected hosted in subversion makes little sense.  just use git-svn).
