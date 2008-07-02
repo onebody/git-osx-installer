@@ -1,6 +1,6 @@
 The source files are in the svn repository (I know... a git projected hosted in subversion makes little sense.  just use git-svn).
 
 {{{
-git-svn clone  http://git-osx-installer.googlecode.com/svn/ --std-layout
+git-svn clone  http://git-osx-installer.googlecode.com/svn/ --stdlayout
 
 }}}
