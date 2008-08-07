@@ -12,7 +12,7 @@ cd git-1.5.5.1
 # If you're on PPC, you may need to edit your Makefile and add: 
 MOZILLA_SHA1=1
 
- # Tell make to use /usr/local/git/lib rather than MacPorts:
+# Tell make to use /usr/local/git/lib rather than MacPorts:
 echo "NO_DARWIN_PORTS=1" > Makefile_tmp
 cat Makefile >> Makefile_tmp
 mv Makefile_tmp Makefile
