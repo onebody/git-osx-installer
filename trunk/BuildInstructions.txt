@@ -22,16 +22,15 @@ make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git strip
 sudo make LDFLAGS="-L/usr/local/git/lib,/usr/lib" prefix=/usr/local/git install
 
 # contrib
-mkdir -p /usr/local/git/contrib/completion
-cp contrib/completion/git-completion.bash /usr/local/git/contrib/completion/
+sudo mkdir -p /usr/local/git/contrib/completion
+sudo cp contrib/completion/git-completion.bash /usr/local/git/contrib/completion/
 
 # change hardlinks for symlinks
-sudo ruby #{InstallerFilesRoot}/UserScripts/symlink_git_hardlinks.rb
-
 cd ..
+sudo ruby UserScripts/symlink_git_hardlinks.rb
 
 curl -O http://www.kernel.org/pub/software/scm/git/git-manpages-1.5.5.1.tar.bz2
-mkdir -p /usr/local/git/man
+sudo mkdir -p /usr/local/git/man
 sudo tar xjv -C /usr/local/git/man -f git-manpages-1.5.5.1.tar.bz2
 
 # add .DS_Store to default ignore for new repositories
