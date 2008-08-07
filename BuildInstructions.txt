@@ -1,3 +1,9 @@
+# NOTE: This process can be automated by the build.sh script. Check it over to make sure everything
+# is correct for your machine, then:
+# ./build.sh
+
+# If you'd rather do things manually, follow these instructions:
+
 # Check the UserScripts/cplibs.sh file and make sure the FROM_DIR is correct for your system. 
 # /opt/local/lib should be fine if you're using MacPorts, which provides these libraries.
 
