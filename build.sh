@@ -1,5 +1,5 @@
 #!/bin/sh
-GIT_VERSION="1.5.6.1"
+GIT_VERSION="1.5.6.5"
 
 sudo mv /usr/local/git{,_`date +%s`}
 sudo UserScripts/cplibs.sh
@@ -14,7 +14,7 @@ pushd git_build
         # If you're on PPC, you may need to edit your Makefile and add: 
         # MOZILLA_SHA1=1
 
-         # Tell make to use /usr/local/git/lib rather than MacPorts:
+        # Tell make to use /usr/local/git/lib rather than MacPorts:
         echo "NO_DARWIN_PORTS=1" > Makefile_tmp
         cat Makefile >> Makefile_tmp
         mv Makefile_tmp Makefile
