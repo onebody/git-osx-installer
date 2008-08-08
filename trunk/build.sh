@@ -11,11 +11,12 @@ pushd git_build
     [ ! -d git-$GIT_VERSION ] && tar jxvf git-$GIT_VERSION.tar.bz2
     pushd git-$GIT_VERSION
 
-        # If you're on PPC, you may need to edit your Makefile and add: 
-        # MOZILLA_SHA1=1
+        rm Makefile_tmp
+        # If you're on PPC, you may need to uncomment this line: 
+        # echo "MOZILLA_SHA1=1" >> Makefile_tmp
 
         # Tell make to use /usr/local/git/lib rather than MacPorts:
-        echo "NO_DARWIN_PORTS=1" > Makefile_tmp
+        echo "NO_DARWIN_PORTS=1" >> Makefile_tmp
         cat Makefile >> Makefile_tmp
         mv Makefile_tmp Makefile
 
