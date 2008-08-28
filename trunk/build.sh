@@ -1,5 +1,8 @@
 #!/bin/sh
-GIT_VERSION="1.5.6.5"
+if [ "`uname`" == "Darwin" ]; then sed_regexp="-E"; else sed_regexp="-r"; fi 
+GIT_VERSION="${1:-`curl http://git.or.cz/ 2>&1 | grep "@VNUM@" | sed $sed_regexp 's/^.+-->v([0-9.]+).+$/\1/'`}"
+
+echo "Building GIT_VERSION $GIT_VERSION"
 
 sudo mv /usr/local/git{,_`date +%s`}
 sudo UserScripts/cplibs.sh

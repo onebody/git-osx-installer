@@ -1,6 +1,17 @@
 #!/usr/bin/env ruby
-Dir.chdir('/usr/local/git/bin')
-puts files = (Dir.glob("*").select { |f| File.size(f)==File.size('git')} - ['git'])
-files.each do |file|
-  puts `rm #{file} && ln -s git #{file}`
+
+git_binary = '/usr/local/git/bin/git'
+
+[
+  ['git'          , '/usr/local/git/bin'], 
+  ['../../bin/git', '/usr/local/git/libexec/git-core']
+].each do |link, path|
+  Dir.glob(File.join(path, '*')).each do |file|
+    next if file == git_binary
+		puts "#{file} #{File.size(file)} == #{File.size(git_binary)}"
+    next unless File.size(file) == File.size(git_binary)
+    puts "Symlinking #{file}"
+    puts `ln -sf #{link} #{file}`
+  end
 end
+
