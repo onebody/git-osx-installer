@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>156</string>
+	<string>160</string>
 	<key>AMApplicationVersion</key>
-	<string>2.0.1</string>
+	<string>2.0.2</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>Owning Application</key>
@@ -184,7 +184,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>317.500000:710.000000</string>
+				<string>385.000000:787.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Text.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -294,7 +294,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>317.500000:528.000000</string>
+				<string>385.000000:605.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -339,7 +339,7 @@
 				<dict>
 					<key>fileNames</key>
 					<array>
-						<string>~/Desktop/Installer/Disk Image</string>
+						<string>~/projects/GitOSXInstaller/Disk Image</string>
 					</array>
 				</dict>
 				<key>Application</key>
@@ -396,7 +396,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>317.500000:423.000000</string>
+				<string>385.000000:500.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -429,7 +429,7 @@
 						<array>
 							<string>git-</string>
 							<string>$(DEA2B0AD-158A-445A-8645-40EA81364BF9)</string>
-							<string>-osx-leopard-intel</string>
+							<string>-intel-leopard</string>
 						</array>
 					</dict>
 					<key>folderPath</key>
@@ -447,7 +447,7 @@
 						<array>
 							<string>Git-</string>
 							<string>$(DEA2B0AD-158A-445A-8645-40EA81364BF9)</string>
-							<string>- Installer for Intel OS X Leopard</string>
+							<string>-Intel-Leopard</string>
 						</array>
 					</dict>
 					<key>whenDone</key>
@@ -471,13 +471,13 @@
 					<key>encryptImage</key>
 					<false/>
 					<key>fileName</key>
-					<string>git-$(DEA2B0AD-158A-445A-8645-40EA81364BF9)-osx-leopard-intel</string>
+					<string>git-$(DEA2B0AD-158A-445A-8645-40EA81364BF9)-intel-leopard</string>
 					<key>folderPath</key>
-					<string>~/Desktop/Installer</string>
+					<string>~/projects/GitOSXInstaller</string>
 					<key>imageSize</key>
 					<integer>-1</integer>
 					<key>volumeName</key>
-					<string>Git-$(DEA2B0AD-158A-445A-8645-40EA81364BF9)- Installer for Intel OS X Leopard</string>
+					<string>Git-$(DEA2B0AD-158A-445A-8645-40EA81364BF9)-Intel-Leopard</string>
 					<key>whenDone</key>
 					<integer>0</integer>
 				</dict>
@@ -500,7 +500,7 @@
 				<key>Class Name</key>
 				<string>AMAppleScriptAction</string>
 				<key>InputUUID</key>
-				<string>CB0043B8-2121-4710-ADBD-02390AF8627A</string>
+				<string>ABA3DFEF-0E1D-424B-B4B9-C456F2213262</string>
 				<key>Keywords</key>
 				<array>
 					<string>New</string>
@@ -508,9 +508,9 @@
 					<string>Image</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>D347E5F4-7BFB-451E-B689-39F55E21F69C</string>
+				<string>4F739899-DE5D-4FF0-A237-9E2111E9087D</string>
 				<key>UUID</key>
-				<string>12BE0146-A857-4EB3-828E-299633E22518</string>
+				<string>2A2B40EA-B10D-40B7-B07A-0AA39E7981CC</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Finder</string>
@@ -599,7 +599,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>318.500000:185.000000</string>
+				<string>385.000000:262.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/New Disk Image.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -609,42 +609,40 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>2F8B06E0-DA90-44EB-BB03-7ABC99BB70B6</key>
-		<dict>
-			<key>from</key>
-			<string>8334B814-2EB1-4250-A210-7E12B8EF0217 - 8334B814-2EB1-4250-A210-7E12B8EF0217</string>
-			<key>to</key>
-			<string>12BE0146-A857-4EB3-828E-299633E22518 - 12BE0146-A857-4EB3-828E-299633E22518</string>
-		</dict>
-		<key>4A41D7C5-86FC-42F2-A15E-BCECFC717C92</key>
+		<key>1D63A321-7812-4AEF-8940-5EFC218853FD</key>
 		<dict>
 			<key>from</key>
 			<string>038A22CF-2638-4232-9B59-CBF664ED33C4 - 038A22CF-2638-4232-9B59-CBF664ED33C4</string>
 			<key>to</key>
 			<string>CB942E8C-2805-4065-9A4F-7DAC11D78002 - CB942E8C-2805-4065-9A4F-7DAC11D78002</string>
 		</dict>
-		<key>C322ECC2-7C83-4965-96A1-FE4E34AB89F5</key>
+		<key>A4438F3D-A893-48E7-AD09-3C323F6D93E0</key>
 		<dict>
 			<key>from</key>
 			<string>CB942E8C-2805-4065-9A4F-7DAC11D78002 - CB942E8C-2805-4065-9A4F-7DAC11D78002</string>
 			<key>to</key>
 			<string>8334B814-2EB1-4250-A210-7E12B8EF0217 - 8334B814-2EB1-4250-A210-7E12B8EF0217</string>
 		</dict>
+		<key>A6521A28-3748-46B8-A2DB-1417D1464FF2</key>
+		<dict>
+			<key>from</key>
+			<string>8334B814-2EB1-4250-A210-7E12B8EF0217 - 8334B814-2EB1-4250-A210-7E12B8EF0217</string>
+			<key>to</key>
+			<string>2A2B40EA-B10D-40B7-B07A-0AA39E7981CC - 2A2B40EA-B10D-40B7-B07A-0AA39E7981CC</string>
+		</dict>
 	</dict>
 	<key>state</key>
 	<dict>
 		<key>EditorSplitViewPosition</key>
-		<real>700</real>
-		<key>EditorView</key>
-		<integer>2</integer>
+		<real>0.0</real>
 		<key>MainSplitViewPosition_v2</key>
 		<real>338</real>
 		<key>windowFrame</key>
-		<string>{{625, 176}, {973, 936}}</string>
+		<string>{{384, 187}, {1108, 873}}</string>
 		<key>windowFrameTopLeft</key>
-		<string>{{625, 0}, {973, 936}}</string>
+		<string>{{384, 52}, {1108, 873}}</string>
 		<key>workflowViewScrollPosition</key>
-		<string>{{0, 0}, {635, 700}}</string>
+		<string>{{0, 0}, {770, 777}}</string>
 	</dict>
 	<key>variables</key>
 	<array>
@@ -656,7 +654,7 @@
 			<key>name</key>
 			<string>Git Version</string>
 			<key>value</key>
-			<string>1.5.5.4</string>
+			<string>1.6.0.1</string>
 		</dict>
 	</array>
 </dict>
