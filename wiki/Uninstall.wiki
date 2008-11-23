@@ -1,3 +1,4 @@
+#labels Featured
 To uninstall Git, run the following:
 
 {{{
