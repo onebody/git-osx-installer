@@ -7,13 +7,13 @@ To install, [http://code.google.com/p/git-osx-installer/downloads/list?q=label:F
 
 To use, open finder to a folder with a git repository, and click the "Git" icon.
 
-= CHANGELOG =
+= CHANGES =
 
-- Version 2.0 -
+Version 2.0
 
-* No longer require an open terminal to get ssh fetches to work. (uses an invisible daemonized screen session instead). 
-* Sometimes 2 git-gui instances would be launched by the droplet. That has been addressed and should only happen on extremely rare occasions. 
-* Now sports an AWESOME icon (thanks Jake Smith) 
+ * No longer require an open terminal to get ssh fetches to work. (uses an invisible daemonized screen session instead). 
+ * Sometimes 2 git-gui instances would be launched by the droplet. That has been addressed and should only happen on extremely rare occasions. 
+ * Now sports an AWESOME icon (thanks Jake Smith) 
 
 = Credits =
 
