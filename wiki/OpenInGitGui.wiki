@@ -12,7 +12,7 @@ To use, open finder to a folder with a git repository, and click the "Git" icon.
 Version 2.0
 
  * No longer require an open terminal to get ssh fetches to work. (uses an invisible daemonized screen session instead). 
- * Sometimes 2 git-gui instances would be launched by the droplet. That has been addressed and should only happen on extremely rare occasions. 
+ * 2 git-gui instances would be launched by the droplet. That has been addressed and should only happen on extremely rare occasions. (update - actually... it happens every time git gui takes longer than 0.25 seconds to launch, which is the case if git-gui and supporting libraries haven't been cached to disk.  bummer)
  * Now sports an AWESOME icon (thanks Jake Smith) 
 
 = Credits =
