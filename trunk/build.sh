@@ -1,13 +1,13 @@
 #!/bin/sh
 if [ "`uname`" == "Darwin" ]; then sed_regexp="-E"; else sed_regexp="-r"; fi 
-GIT_VERSION="${1:-`curl http://git.or.cz/ 2>&1 | grep "@VNUM@" | sed $sed_regexp 's/^.+-->v([0-9.]+).+$/\1/'`}"
+GIT_VERSION="${1:-`curl http://git-scm.com/ 2>&1 | grep "<div id=\"ver\">" | sed $sed_regexp 's/^.+>v([0-9.]+)<.+$/\1/'`}"
 
 echo "Building GIT_VERSION $GIT_VERSION"
 
 sudo mv /usr/local/git{,_`date +%s`}
 sudo UserScripts/cplibs.sh
 
-mkdir git_build
+mkdir -p git_build
 
 pushd git_build
     [ ! -f git-$GIT_VERSION.tar.bz2 ] && curl -O http://kernel.org/pub/software/scm/git/git-$GIT_VERSION.tar.bz2
