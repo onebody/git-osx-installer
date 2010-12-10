@@ -9,6 +9,10 @@ To use, open finder to a folder with a git repository, and click the "Git" icon.
 
 = CHANGES =
 
+Version 2.1
+
+ * Fixes bug where repository paths with spaces could not be opened.
+
 Version 2.0
 
  * No longer require an open terminal to get ssh fetches to work. (uses an invisible daemonized screen session instead). 
