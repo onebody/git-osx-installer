@@ -1,5 +1,5 @@
 #labels Featured
-A droplet which allows you to, from finder, open a repository in [https://github.com/brotherbard/gitx/downloads GitX].  You can download the droplet [http://code.google.com/p/git-osx-installer/downloads/list?can=3&q=OpenInGitX&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount here]
+A droplet which allows you to, from finder, open a repository in [https://github.com/brotherbard/gitx/downloads GitX].  You can download the droplet [http://code.google.com/p/git-osx-installer/downloads/list?can=3&q=OpenInGitX&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount here].
 
 http://git-osx-installer.googlecode.com/files/open-in-gitx.jpg
 
