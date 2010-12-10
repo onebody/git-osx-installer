@@ -1,0 +1,15 @@
+#labels Featured
+A droplet which allows you to, from finder, open a repository in GitX
+
+http://git-osx-installer.googlecode.com/files/open-in-gitx.jpg
+
+
+= CHANGES =
+
+Version 1.0
+
+* Initial release
+
+= Credits =
+
+This is really a modified version of [http://henrik.nyh.se/2007/10/open-in-textmate-from-leopard-finder open in textmate],
