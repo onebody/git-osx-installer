@@ -5,6 +5,12 @@ http://git-osx-installer.googlecode.com/files/open-in-gitx.jpg
 
 = CHANGES =
 
+Version 1.1
+
+* Fixed finder droplet name
+* If selecting folder containing git repository in finder, that folder is opened
+
+
 Version 1.0
 
 * Initial release
