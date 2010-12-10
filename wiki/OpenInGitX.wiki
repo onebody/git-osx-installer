@@ -1,8 +1,7 @@
 #labels Featured
-A droplet which allows you to, from finder, open a repository in GitX
+A droplet which allows you to, from finder, open a repository in [https://github.com/brotherbard/gitx/downloads GitX]
 
 http://git-osx-installer.googlecode.com/files/open-in-gitx.jpg
-
 
 = CHANGES =
 
